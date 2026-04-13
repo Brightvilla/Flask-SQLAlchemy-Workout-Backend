@@ -11,17 +11,17 @@ class WorkoutExerciseSchema(Schema):
     exercise = fields.Nested(lambda: ExerciseSchema(only=("id", "name", "muscle_group")), dump_only=True)
 
     @validates("sets")
-    def validate_sets(self, value):
+    def validate_sets(self, value, **kwargs):
         if value is not None and value <= 0:
             raise ValidationError("Sets must be a positive integer.")
 
     @validates("reps")
-    def validate_reps(self, value):
+    def validate_reps(self, value, **kwargs):
         if value is not None and value <= 0:
             raise ValidationError("Reps must be a positive integer.")
 
     @validates("duration")
-    def validate_duration(self, value):
+    def validate_duration(self, value, **kwargs):
         if value is not None and value <= 0:
             raise ValidationError("Duration must be a positive number.")
 
@@ -31,6 +31,11 @@ class WorkoutSchema(Schema):
     name = fields.Str(required=True, validate=validate.Length(min=1, error="Name must not be empty."))
     description = fields.Str(load_default=None)
     workout_exercises = fields.List(fields.Nested(WorkoutExerciseSchema), dump_only=True)
+
+    @validates("name")
+    def validate_name(self, value, **kwargs):
+        if not value.strip():
+            raise ValidationError("Name must not be empty.")
 
 
 class ExerciseSchema(Schema):
