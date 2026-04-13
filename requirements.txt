@@ -23,7 +23,12 @@ Werkzeug==2.2.2
 
 # -------------------------------------------------------
 # To run all tests:
-#       python -m pytest test_app.py -v
 #
-# All 28 tests should pass after installing the above packages.
+#   1. Install dependencies:
+#           pip install -r requirements.txt
+#
+#   2. Run the test suite:
+#           python -m pytest test_app.py -v
+#
+#   Expected result: 28 passed
 # -------------------------------------------------------
