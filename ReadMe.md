@@ -13,7 +13,7 @@ Allows personal trainers to create and manage workouts, create reusable exercise
 ## Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Brightvilla/Flask-SQLAlchemy-Workout-Backend.git
 cd Flask-SQLAlchemy-Workout-Backend
 pipenv install
 pipenv shell
@@ -99,13 +99,14 @@ API available at `http://127.0.0.1:5000`
 
 ## Dependencies
 
-```toml
-flask = "==2.2.2"
-flask-migrate = "==3.1.0"
-flask-sqlalchemy = "==3.0.3"
-werkzeug = "==2.2.2"
-importlib-metadata = "==6.0.0"
-importlib-resources = "==5.10.0"
-ipdb = "==0.13.9"
-marshmallow = "==3.20.1"
 ```
+Flask==2.2.2
+Flask-Migrate==3.1.0
+Flask-SQLAlchemy==3.0.3
+Werkzeug==2.2.2
+marshmallow==4.3.0
+SQLAlchemy==2.0.49
+alembic==1.18.4
+```
+
+> Full list available in `requirements.txt`. Install with `pip install -r requirements.txt`.

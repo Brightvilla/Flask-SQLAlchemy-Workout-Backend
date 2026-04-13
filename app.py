@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from flask_migrate import Migrate
 from sqlalchemy.exc import IntegrityError
@@ -10,7 +11,6 @@ from schemas import (
 from marshmallow import ValidationError
 
 app = Flask(__name__)
-import os
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///:memory:" if os.environ.get("TESTING") else "sqlite:///workout.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
