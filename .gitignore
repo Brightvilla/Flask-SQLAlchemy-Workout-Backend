@@ -3,3 +3,4 @@ __pycache__/
 *.pyo
 instance/workout.db
 .env
+.codex
