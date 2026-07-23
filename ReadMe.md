@@ -31,7 +31,7 @@ python seed.py
 flask run
 ```
 
-API available at `http://127.0.0.1:5000`
+API available at `http://127.0.0.1:5001` having a problem with already usual port 5000 running.
 
 ---
 
